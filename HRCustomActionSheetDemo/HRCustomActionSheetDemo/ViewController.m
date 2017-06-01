@@ -8,6 +8,8 @@
 
 #import "ViewController.h"
 
+#import "HRCustomActionSheet.h"
+
 @interface ViewController ()
 
 @end
@@ -27,6 +29,11 @@
 
 - (IBAction)onClickShowSheet:(id)sender {
     
+    NSArray *contents = @[@"第一行",@"第二行",@"第三行",@"第四行"];
+    
+    [HRCustomActionSheet showDefaultCustomActionSheetWithTitle:@"这是标题" optionContents:contents selectedBlock:^(NSInteger index) {
+        NSLog(@"点击了第%ld-------content:%@",index,contents[index]);
+    }];
     
 }
 
